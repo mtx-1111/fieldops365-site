@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FieldOps365 — Field Service Management Software for Modern Operations Teams</title>
+<meta name="description" content="FieldOps365 is end-to-end field service management software. Manage work orders, coordinate vendors, capture GPS proof, generate completion certificates, and run your entire field operation from one platform.">
+<meta name="keywords" content="field service management software, work order management, vendor management, field operations, completion certificate, job tracking, FSM software, field service platform India">
+<link rel="canonical" href="https://fieldops365.com/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="SwatiLabs">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fieldops365.com/">
+<meta property="og:title" content="FieldOps365 — Field Service Management Software">
+<meta property="og:description" content="End-to-end field service management. Work orders, vendor coordination, GPS proof capture, digital certificates — one platform.">
+<meta property="og:image" content="https://fieldops365.com/images/og-cover.png">
+<meta property="og:site_name" content="FieldOps365">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FieldOps365 — Field Service Management Software">
+<meta name="twitter:description" content="End-to-end field service management. Work orders, vendor coordination, GPS proof capture, digital certificates — one platform.">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "FieldOps365",
+  "url": "https://fieldops365.com",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "End-to-end field service management software for work orders, vendor management, GPS proof capture, and digital completion certificates.",
+  "offers": {"@type": "Offer","availability": "https://schema.org/InStock","url": "https://fieldops365.com/#pricing"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "SwatiLabs",
+    "url": "https://swatilabs.in",
+    "contactPoint": {"@type": "ContactPoint","telephone": "+919819529645","email": "contact@fieldops365.com","contactType": "sales"}
+  }
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#0F172A;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:root{
+  --blue:#2563EB;--blue-dark:#1D4ED8;--blue-light:#EFF6FF;--indigo:#4F46E5;
+  --slate:#0F172A;--slate-2:#1E293B;--muted:#64748B;--border:#E2E8F0;
+  --bg-soft:#F8FAFC;--radius:12px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:0 4px 16px rgba(0,0,0,.08),0 2px 4px rgba(0,0,0,.04);
+}
+.container{max-width:1160px;margin:0 auto;padding:0 24px}
+.section{padding:96px 0}
+.text-center{text-align:center}
+.display{font-size:clamp(38px,5vw,64px);font-weight:900;line-height:1.1;letter-spacing:-1.5px;color:var(--slate)}
+.h2{font-size:clamp(26px,3.5vw,44px);font-weight:800;line-height:1.15;letter-spacing:-0.8px;color:var(--slate)}
+.h3{font-size:20px;font-weight:700;color:var(--slate)}
+.body-lg{font-size:18px;color:var(--muted);line-height:1.7}
+.body{font-size:15px;color:var(--muted);line-height:1.7}
+.label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.gradient-text{background:linear-gradient(135deg,#2563EB 0%,#4F46E5 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:8px;border:none;cursor:pointer;transition:all .18s ease;white-space:nowrap;text-decoration:none}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 4px 14px rgba(37,99,235,.35)}
+.btn-primary:hover{background:var(--blue-dark);box-shadow:0 6px 20px rgba(37,99,235,.45);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--slate);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+.btn-lg{padding:16px 36px;font-size:16px}
+.btn-sm{padding:10px 20px;font-size:13px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--blue-light);color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:20px}
+.chip-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{height:36px;width:auto}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .15s}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--slate);margin:4px 0;border-radius:2px}
+.mobile-menu{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--border);padding:16px 24px 24px;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:500;color:var(--slate);padding:10px 0;border-bottom:1px solid var(--border)}
+.mobile-menu .btn{margin-top:12px;justify-content:center}
+
+/* HERO */
+.hero{background:linear-gradient(180deg,#F0F6FF 0%,#fff 100%);padding:100px 0 80px;overflow:hidden;position:relative}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(37,99,235,.07) 0%,transparent 70%);pointer-events:none}
+.hero-content{max-width:760px}
+.hero h1{margin-bottom:24px}
+.hero-sub{margin-bottom:40px;max-width:600px}
+.hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:56px}
+.hero-social{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.hero-stat{display:flex;flex-direction:column}
+.hero-stat-num{font-size:22px;font-weight:800;color:var(--slate);line-height:1}
+.hero-stat-label{font-size:12px;color:var(--muted);margin-top:3px}
+.hero-divider{width:1px;height:36px;background:var(--border)}
+
+/* LOGOS BAR */
+.logos-bar{padding:36px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-soft)}
+.logos-bar-inner{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.logos-bar-label{font-size:13px;font-weight:500;color:var(--muted);white-space:nowrap;margin-right:8px}
+.industry-tag{background:#fff;border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:13px;font-weight:500;color:var(--muted);box-shadow:var(--shadow-sm)}
+
+/* PROBLEM */
+.problem{background:var(--slate);color:#fff}
+.problem .h2{color:#fff}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);border-radius:var(--radius);overflow:hidden;margin-top:56px}
+.problem-card{background:var(--slate-2);padding:40px 36px}
+.problem-card-icon{width:48px;height:48px;border-radius:10px;background:rgba(239,68,68,.15);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px}
+.problem-card h3{color:#fff;margin-bottom:10px;font-size:18px;font-weight:700}
+.problem-card p{color:rgba(255,255,255,.6);font-size:14px;line-height:1.65}
+
+/* FEATURES */
+.features-header{text-align:center;max-width:680px;margin:0 auto 64px}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.feature-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;transition:box-shadow .2s,transform .2s}
+.feature-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.feature-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:22px}
+.ic-blue{background:#EFF6FF}.ic-indigo{background:#EEF2FF}.ic-green{background:#ECFDF5}.ic-amber{background:#FFFBEB}.ic-rose{background:#FFF1F2}.ic-violet{background:#F5F3FF}
+.feature-card h3{font-size:17px;font-weight:700;color:var(--slate);margin-bottom:8px}
+.feature-card p{font-size:14px;color:var(--muted);line-height:1.65}
+
+/* HOW IT WORKS */
+.how{background:var(--bg-soft)}
+.how-header{text-align:center;max-width:640px;margin:0 auto 64px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;position:relative}
+.steps::before{content:'';position:absolute;top:36px;left:calc(16.66% + 28px);right:calc(16.66% + 28px);height:2px;background:linear-gradient(90deg,var(--blue),var(--indigo))}
+.step{text-align:center}
+.step-num{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--indigo));color:#fff;font-size:24px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:1;box-shadow:0 8px 24px rgba(37,99,235,.3)}
+.step h3{font-size:18px;font-weight:700;color:var(--slate);margin-bottom:10px}
+.step p{font-size:14px;color:var(--muted);max-width:260px;margin:0 auto}
+
+/* DETAIL ROWS */
+.detail-row{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding:32px 0}
+.detail-row+.detail-row{border-top:1px solid var(--border);margin-top:64px;padding-top:64px}
+.detail-visual{background:linear-gradient(135deg,var(--blue-light) 0%,#EEF2FF 100%);border:1px solid var(--border);border-radius:16px;padding:48px 32px;display:flex;align-items:center;justify-content:center;min-height:300px;position:relative;overflow:hidden}
+.detail-visual::after{content:'';position:absolute;bottom:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(37,99,235,.08)}
+.detail-visual .big-icon{font-size:72px;position:relative;z-index:1}
+.detail-list{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:12px}
+.detail-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--muted);line-height:1.6}
+.check{color:var(--blue);font-size:16px;flex-shrink:0;margin-top:1px}
+
+/* INDUSTRIES */
+.industries{background:var(--bg-soft)}
+.industries-header{text-align:center;max-width:600px;margin:0 auto 56px}
+.industry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.industry-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;display:flex;align-items:flex-start;gap:16px;box-shadow:var(--shadow-sm);transition:box-shadow .2s}
+.industry-card:hover{box-shadow:var(--shadow-md)}
+.industry-icon{font-size:28px;flex-shrink:0}
+.industry-card h4{font-size:15px;font-weight:700;color:var(--slate);margin-bottom:4px}
+.industry-card p{font-size:13px;color:var(--muted)}
+
+/* STATS */
+.stats{background:linear-gradient(135deg,#1D4ED8 0%,#4338CA 100%);color:#fff;padding:72px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);border-radius:var(--radius);overflow:hidden}
+.stat-item{padding:40px 32px;text-align:center}
+.stat-num{font-size:48px;font-weight:900;line-height:1;margin-bottom:8px;letter-spacing:-1px}
+.stat-label{font-size:14px;color:rgba(255,255,255,.75)}
+
+/* PRICING */
+.pricing-header{text-align:center;max-width:600px;margin:0 auto 56px}
+.pricing-card{background:var(--bg-soft);border:2px solid var(--border);border-radius:16px;padding:48px 40px;max-width:560px;margin:0 auto;text-align:center}
+.pricing-card.featured{background:linear-gradient(145deg,#EFF6FF,#EEF2FF);border-color:var(--blue);box-shadow:0 16px 48px rgba(37,99,235,.12)}
+.pricing-badge{display:inline-block;background:var(--blue);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 14px;border-radius:999px;margin-bottom:20px}
+.pricing-price{font-size:36px;font-weight:900;color:var(--slate);letter-spacing:-1px;margin:12px 0}
+.pricing-price span{font-size:16px;font-weight:400;color:var(--muted);letter-spacing:0}
+.pricing-desc{font-size:15px;color:var(--muted);margin-bottom:28px}
+.pricing-features{list-style:none;margin-bottom:36px;display:flex;flex-direction:column;gap:10px;text-align:left}
+.pricing-features li{display:flex;align-items:center;gap:10px;font-size:14px}
+.pricing-features .check{color:#16A34A}
+.pricing-contact{margin-top:24px;font-size:14px;color:var(--muted)}
+.pricing-contact a{color:var(--blue);font-weight:600}
+
+/* FAQ */
+.faq{background:var(--bg-soft)}
+.faq-header{text-align:center;max-width:560px;margin:0 auto 56px}
+.faq-list{max-width:740px;margin:0 auto;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{width:100%;background:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:22px 28px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:var(--slate);text-align:left;transition:background .15s}
+.faq-q:hover{background:var(--bg-soft)}
+.faq-chevron{font-size:18px;transition:transform .2s;color:var(--muted);flex-shrink:0}
+.faq-a{display:none;padding:0 28px 22px;font-size:14px;color:var(--muted);line-height:1.7;background:#fff}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,#1E40AF 0%,#4338CA 100%);padding:80px 0;text-align:center;color:#fff}
+.cta-band .h2{color:#fff;margin-bottom:16px}
+.cta-band .body-lg{color:rgba(255,255,255,.8);margin-bottom:40px}
+.btn-white{background:#fff;color:var(--blue-dark);box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.btn-white:hover{box-shadow:0 8px 24px rgba(0,0,0,.2);transform:translateY(-2px)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn-ghost:hover{background:rgba(255,255,255,.2)}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.cta-contact{margin-top:24px;font-size:14px;color:rgba(255,255,255,.7)}
+.cta-contact a{color:rgba(255,255,255,.9);text-decoration:underline}
+
+/* FOOTER */
+footer{background:var(--slate);color:rgba(255,255,255,.7);padding:60px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+.footer-brand p{font-size:13px;line-height:1.7;max-width:280px;margin-top:16px}
+.footer-col h5{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#60A5FA;margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.6);transition:color .15s}
+.footer-col ul li a:hover{color:#fff}
+.footer-contact{display:flex;flex-direction:column;gap:8px}
+.footer-contact-email a{font-size:13px;color:#67E8F9;transition:color .15s;display:block}
+.footer-contact-email a:hover{color:#fff}
+.footer-contact-phone a{font-size:13px;color:#86EFAC;transition:color .15s;display:block}
+.footer-contact-phone a:hover{color:#fff}
+.footer-contact-web a{font-size:13px;color:rgba(255,255,255,.5);transition:color .15s;display:block}
+.footer-contact-web a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.4)}
+.footer-swati{display:flex;align-items:center;gap:4px;font-size:1.05rem;font-weight:700;letter-spacing:-.4px;color:rgba(255,255,255,.8);text-decoration:none;transition:opacity .15s}
+.footer-swati:hover{opacity:.7}
+.footer-swati .sl-labs{color:#6c63ff}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .section{padding:64px 0}
+  .nav-links{display:none}
+  .nav-cta .btn-outline{display:none}
+  .hamburger{display:block}
+  .feat-grid,.problem-grid,.steps,.industry-grid{grid-template-columns:1fr}
+  .steps::before{display:none}
+  .step{max-width:340px;margin:0 auto}
+  .detail-row{grid-template-columns:1fr;gap:32px}
+  .detail-visual{min-height:200px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+  .pricing-card{padding:32px 20px}
+  .stat-num{font-size:36px}
+  .problem-card{padding:28px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="FieldOps365 Home">
+        <img src="/images/fieldops-logo.png" alt="FieldOps365" width="120" height="36">
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#industries">Industries</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav-cta">
+        <a href="mailto:contact@fieldops365.com" class="btn btn-outline btn-sm">Contact Sales</a>
+        <a href="https://live.fieldops365.com" class="btn btn-primary btn-sm">Go to App →</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#industries">Industries</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="mailto:contact@fieldops365.com" class="btn btn-outline" style="border:1.5px solid var(--border)">Contact Sales</a>
+    <a href="https://live.fieldops365.com" class="btn btn-primary">Go to App →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" role="banner">
+  <div class="container">
+    <div class="hero-content">
+      <div class="chip"><span class="chip-dot"></span>Field Service Management Software</div>
+      <h1 class="display">Your Entire Field Operation.<br><span class="gradient-text">One Intelligent Platform.</span></h1>
+      <p class="body-lg hero-sub">From the moment a work order is raised to the moment a signed completion certificate lands in your client's inbox — FieldOps365 handles it all. No WhatsApp chaos. No paper trails. No disputes.</p>
+      <div class="hero-actions">
+        <a href="https://live.fieldops365.com" class="btn btn-primary btn-lg">Get Started Free →</a>
+        <a href="mailto:contact@fieldops365.com" class="btn btn-outline btn-lg">Request a Demo</a>
+      </div>
+      <div class="hero-social">
+        <div class="hero-stat"><span class="hero-stat-num">100%</span><span class="hero-stat-label">Digital workflow</span></div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat"><span class="hero-stat-num">Zero</span><span class="hero-stat-label">Paper. Ever.</span></div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat"><span class="hero-stat-num">Multi-tenant</span><span class="hero-stat-label">Enterprise-ready</span></div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat"><span class="hero-stat-num">No app</span><span class="hero-stat-label">needed by field agents</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- INDUSTRY TRUST BAR -->
+<section class="logos-bar" aria-label="Industries served">
+  <div class="container">
+    <div class="logos-bar-inner">
+      <span class="logos-bar-label">Built for teams in</span>
+      <span class="industry-tag">🔥 Fire Safety</span>
+      <span class="industry-tag">❄️ HVAC</span>
+      <span class="industry-tag">⚡ Electrical</span>
+      <span class="industry-tag">🏢 Facilities Management</span>
+      <span class="industry-tag">🔒 Security Systems</span>
+      <span class="industry-tag">🛠️ AMC Providers</span>
+      <span class="industry-tag">🔧 General Contracting</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem section" aria-labelledby="problem-heading">
+  <div class="container">
+    <div style="max-width:640px">
+      <div class="chip" style="background:rgba(239,68,68,.15);color:#FCA5A5">The Problem</div>
+      <h2 class="h2" id="problem-heading" style="color:#fff">The way most teams run field ops is broken.</h2>
+      <p class="body-lg" style="color:rgba(255,255,255,.65);margin-top:16px">Scattered WhatsApp messages, lost paper checklists, and zero proof of completion — the old way costs you clients, time, and revenue.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-card-icon">📱</div>
+        <h3>WhatsApp Is Not a Workflow</h3>
+        <p>Job assignments buried in chat threads, no audit trail, no accountability. When a client disputes a job, you have nothing to show.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">📋</div>
+        <h3>Paper Checklists Don't Scale</h3>
+        <p>Field agents misplace forms, skip steps, or fill them in after the fact. You have zero visibility until they return to the office — if ever.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">⚠️</div>
+        <h3>No Proof When It Matters</h3>
+        <p>Client raises a dispute. Was the job done? Was it done right? Without GPS evidence, photos, and a signed certificate, you can't win that conversation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="section" style="background:#fff" aria-labelledby="features-heading">
+  <div class="container">
+    <div class="features-header">
+      <div class="chip">Platform Features</div>
+      <h2 class="h2" id="features-heading">Everything you need to run field ops at scale</h2>
+      <p class="body-lg" style="margin-top:16px">A tightly integrated suite built around how field service teams actually work — not a collection of bolted-on tools.</p>
+    </div>
+    <div class="feat-grid">
+      <article class="feature-card">
+        <div class="feature-icon ic-blue">📋</div>
+        <h3>Work Order Management</h3>
+        <p>Create, assign, and track work orders end-to-end. Define scope, attach job types, set locations, and link clients — all from a structured admin interface.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-green">✅</div>
+        <h3>Job-Level Tracking</h3>
+        <p>Break work orders into individual jobs with their own status, assignment, and completion state. Know exactly where every job stands, in real time.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-indigo">🏗️</div>
+        <h3>Vendor & Contractor Management</h3>
+        <p>Maintain a curated contractor network. Track skills, assign jobs, manage commercial terms, and rate performance — all within the platform.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-amber">👤</div>
+        <h3>Client Management</h3>
+        <p>Maintain a full client directory with contact details, linked work orders, and job history. Professional service delivery starts with organised client records.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-rose">📱</div>
+        <h3>Mobile-First Field Execution</h3>
+        <p>Field agents receive a secure magic link — no app download, no login friction. They execute jobs through a guided mobile wizard that captures every required data point.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-violet">📍</div>
+        <h3>GPS & Photo Evidence Capture</h3>
+        <p>Every job completion is stamped with GPS coordinates and timestamped photos. Dispute resolution becomes instant — you have incontrovertible proof.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-green">✍️</div>
+        <h3>Digital Signature Capture</h3>
+        <p>Capture on-site client or supervisor signatures directly in the mobile wizard. Every completion is formally acknowledged in real time, on-site.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-blue">📄</div>
+        <h3>Instant Completion Certificates</h3>
+        <p>Generate branded PDF completion certificates automatically on job approval. Send them to clients without touching a printer or a PDF editor.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-indigo">🔍</div>
+        <h3>Admin Review & Approval Queue</h3>
+        <p>Review submitted job evidence before certificates are issued. Maintain quality control with a structured approval queue that flags incomplete submissions.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-amber">⭐</div>
+        <h3>Vendor Performance Ratings</h3>
+        <p>Rate vendors after each job and build a performance history. Drive accountability across your contractor network with transparent, data-backed ratings.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-rose">🏢</div>
+        <h3>Vendor Self-Service Portal</h3>
+        <p>Vendors access their own portal to view assigned jobs, commercials, team members, and profile — reducing admin burden on your team.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-violet">📊</div>
+        <h3>Dashboard & Analytics</h3>
+        <p>Real-time overview of work orders, jobs, and vendor activity. Make data-driven decisions with operational metrics always at your fingertips.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-blue">👥</div>
+        <h3>Multi-User & Role Management</h3>
+        <p>Invite team members, assign roles, and control access. Every user sees exactly what they need to do their job — nothing more, nothing less.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-green">🏛️</div>
+        <h3>Multi-Tenant Architecture</h3>
+        <p>Each client organisation operates in a fully isolated environment with its own data, branding, and configuration. Built from the ground up for multi-client deployments.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon ic-indigo">🤖</div>
+        <h3>AI-Powered Features</h3>
+        <p>Leverage AI assistance for smarter job categorisation, review suggestions, and operational insights — configurable at the platform level.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="how section" aria-labelledby="how-heading">
+  <div class="container">
+    <div class="how-header">
+      <div class="chip">How It Works</div>
+      <h2 class="h2" id="how-heading">Three steps. Zero paper. Complete proof.</h2>
+      <p class="body-lg" style="margin-top:16px">FieldOps365 structures your entire field operation into a clean, repeatable process your whole team can follow.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Admin Creates Work Orders</h3>
+        <p>Define the scope, assign job types, select clients and locations, and schedule vendors — all from the structured admin dashboard.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Field Team Executes via Mobile</h3>
+        <p>Agents receive a secure magic link. They follow a guided on-site wizard — capturing GPS, photos, checklist responses, and signatures. No app required.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Approve & Generate Certificate</h3>
+        <p>Admin reviews submitted evidence, approves the job, and FieldOps365 generates a professional PDF completion certificate automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM MOCKUP -->
+<section id="platform-preview" class="section" style="background:var(--bg-soft)" aria-labelledby="platform-heading">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto 56px">
+      <div class="chip">The Platform</div>
+      <h2 class="h2" id="platform-heading">Admin &amp; Field.<br>One Unified System.</h2>
+      <p class="body-lg" style="margin-top:16px">Back-office dispatches. Field technician executes. Evidence uploads automatically. PDF certificate generates. Every stakeholder always knows exactly where a job stands.</p>
+    </div>
+    <div class="fo-preview-layout">
+      <div class="fo-browser" role="img" aria-label="FieldOps365 admin dashboard showing work orders">
+        <div class="fo-bar">
+          <div class="fo-dots"><span class="fo-dot r"></span><span class="fo-dot y"></span><span class="fo-dot g"></span></div>
+          <span class="fo-url">live.fieldops365.com/admin/work-orders</span>
+        </div>
+        <div class="fo-app">
+          <div class="fo-nav">
+            <div class="fo-nav-logo">FieldOps<span style="color:#60a5fa">365</span></div>
+            <ul class="fo-nav-list">
+              <li><span class="fo-nav-icon">⊞</span> Dashboard</li>
+              <li class="fo-active"><span class="fo-nav-icon">📋</span> Work Orders</li>
+              <li><span class="fo-nav-icon">👥</span> Vendors &amp; Agents</li>
+              <li><span class="fo-nav-icon">✅</span> Review Queue <span class="fo-nav-badge">3</span></li>
+              <li><span class="fo-nav-icon">💳</span> Vendor Billing</li>
+              <li><span class="fo-nav-icon">📊</span> Reports</li>
+            </ul>
+          </div>
+          <div class="fo-main">
+            <div class="fo-main-header">
+              <div>
+                <div class="fo-main-title">Work Orders</div>
+                <div class="fo-main-sub">28 total &nbsp;·&nbsp; 9 active &nbsp;·&nbsp; 3 in review</div>
+              </div>
+              <button class="fo-new-btn">+ New Work Order</button>
+            </div>
+            <div class="fo-wo-list">
+              <div class="fo-wo-header">
+                <span>WO ID</span><span>Job Type</span><span>Vendor</span><span>Location</span><span>Status</span>
+              </div>
+              <div class="fo-wo-row">
+                <span class="fo-wo-id">WO-2026-0048</span>
+                <span>Fire NOC Inspection</span>
+                <span class="fo-vendor">Apex Fire Solutions</span>
+                <span class="fo-loc">Navi Mumbai</span>
+                <span class="fo-status s-inprog">In Progress</span>
+              </div>
+              <div class="fo-wo-row fo-sel">
+                <span class="fo-wo-id">WO-2026-0047</span>
+                <span>Sprinkler AMC Service</span>
+                <span class="fo-vendor">SafeGuard Pvt Ltd</span>
+                <span class="fo-loc">Thane</span>
+                <span class="fo-status s-review">In Review</span>
+              </div>
+              <div class="fo-wo-row">
+                <span class="fo-wo-id">WO-2026-0046</span>
+                <span>Extinguisher Refill &amp; Tag</span>
+                <span class="fo-vendor">ProFire Services</span>
+                <span class="fo-loc">Pune</span>
+                <span class="fo-status s-assigned">Assigned</span>
+              </div>
+              <div class="fo-wo-row">
+                <span class="fo-wo-id">WO-2026-0045</span>
+                <span>Annual Safety Certification</span>
+                <span class="fo-vendor">Apex Fire Solutions</span>
+                <span class="fo-loc">Mumbai</span>
+                <span class="fo-status s-done">Completed</span>
+              </div>
+              <div class="fo-wo-row">
+                <span class="fo-wo-id">WO-2026-0044</span>
+                <span>Hydrant Pressure Test</span>
+                <span class="fo-vendor">RapidSafe Engineers</span>
+                <span class="fo-loc">Navi Mumbai</span>
+                <span class="fo-status s-inprog">In Progress</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fo-phone-wrap">
+        <div class="fo-phone" role="img" aria-label="FieldOps365 field technician mobile view">
+          <div class="fo-phone-bar"><span class="fo-phone-status">9:41 ▲▲▲</span></div>
+          <div class="fo-phone-screen">
+            <div class="fo-phone-wo-id">WO-2026-0048 <span class="fo-status s-inprog">In Progress</span></div>
+            <div class="fo-phone-wo-title">Fire NOC Inspection — Sector 7, Navi Mumbai</div>
+            <div class="fo-phone-tabs">
+              <span class="fo-phone-tab fo-tab-active">Before</span>
+              <span class="fo-phone-tab">Check</span>
+              <span class="fo-phone-tab">Items</span>
+              <span class="fo-phone-tab">After</span>
+            </div>
+            <div class="fo-phone-step">
+              <div class="fo-phone-step-title">Before Photos</div>
+              <div class="fo-phone-step-desc">Attach site photos before work begins.</div>
+              <div class="fo-phone-upload">📎 Attach files</div>
+              <button class="fo-phone-btn">Save &amp; Continue →</button>
+            </div>
+            <div class="fo-disc-title">Discussion</div>
+            <div class="fo-disc-msg">
+              <div class="fo-disc-avatar">A</div>
+              <div class="fo-disc-bubble">Site access confirmed. Starting now.</div>
+            </div>
+          </div>
+        </div>
+        <p class="fo-phone-label">Field Technician View</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.fo-preview-layout{display:flex;gap:28px;align-items:flex-start}
+.fo-browser{flex:1;border:1px solid #CBD5E1;border-radius:14px;overflow:hidden;box-shadow:0 4px 6px rgba(0,0,0,.04),0 20px 60px rgba(37,99,235,.1);min-width:0}
+.fo-bar{background:#1E293B;padding:10px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #0F172A}
+.fo-dots{display:flex;gap:6px}
+.fo-dot{width:10px;height:10px;border-radius:50%}
+.fo-dot.r{background:#FF5F57}.fo-dot.y{background:#FEBC2E}.fo-dot.g{background:#28C840}
+.fo-url{font-family:ui-monospace,'JetBrains Mono',monospace;font-size:.68rem;color:#94A3B8;background:rgba(255,255,255,.06);border:1px solid #334155;border-radius:6px;padding:3px 10px}
+.fo-app{display:flex;background:#F8FAFC}
+.fo-nav{width:168px;flex-shrink:0;background:#1E293B;border-right:1px solid #0F172A;padding:12px 0}
+.fo-nav-logo{font-size:.88rem;font-weight:800;color:#fff;padding:4px 14px 12px;border-bottom:1px solid #334155;margin-bottom:8px;letter-spacing:-.3px}
+.fo-nav-list{list-style:none}
+.fo-nav-list li{padding:7px 14px;font-size:.74rem;color:#94A3B8;display:flex;align-items:center;gap:7px;cursor:default}
+.fo-nav-list li.fo-active{background:rgba(37,99,235,.2);color:#93C5FD;border-left:2px solid #3B82F6}
+.fo-nav-icon{font-size:.78rem}
+.fo-nav-badge{margin-left:auto;background:#EF4444;color:#fff;border-radius:10px;padding:1px 6px;font-size:.58rem;font-weight:700}
+.fo-main{flex:1;min-width:0;padding:14px;background:#fff}
+.fo-main-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:8px}
+.fo-main-title{font-size:.92rem;font-weight:700;color:#0F172A}
+.fo-main-sub{font-size:.68rem;color:#64748B;margin-top:2px}
+.fo-new-btn{font-size:.68rem;font-weight:600;background:#2563EB;color:#fff;border:none;border-radius:6px;padding:6px 12px;cursor:default;white-space:nowrap;flex-shrink:0}
+.fo-wo-list{border:1px solid #E2E8F0;border-radius:8px;overflow:hidden}
+.fo-wo-header{display:grid;grid-template-columns:105px 1fr 120px 80px 90px;gap:8px;padding:6px 12px;background:#F8FAFC;font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#94A3B8;border-bottom:1px solid #E2E8F0}
+.fo-wo-row{display:grid;grid-template-columns:105px 1fr 120px 80px 90px;gap:8px;padding:8px 12px;border-bottom:1px solid #F1F5F9;font-size:.74rem;color:#1E293B;align-items:center;cursor:default}
+.fo-wo-row:last-child{border-bottom:none}
+.fo-wo-row:hover{background:#F8FAFC}
+.fo-wo-row.fo-sel{background:#EFF6FF}
+.fo-wo-id{font-family:ui-monospace,'JetBrains Mono',monospace;font-size:.65rem;color:#2563EB;font-weight:600}
+.fo-vendor{color:#64748B;font-size:.7rem}
+.fo-loc{color:#94A3B8;font-size:.68rem}
+.fo-status{font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:100px;white-space:nowrap;display:inline-block}
+.fo-status.s-inprog{background:#E0F2FE;color:#0369A1}
+.fo-status.s-review{background:#FEF3C7;color:#92400E}
+.fo-status.s-assigned{background:#EEF2FF;color:#4338CA}
+.fo-status.s-done{background:#DCFCE7;color:#15803D}
+.fo-phone-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;flex-shrink:0}
+.fo-phone{width:200px;background:#0F172A;border:1.5px solid #334155;border-radius:28px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.2),0 0 0 1px rgba(255,255,255,.04)}
+.fo-phone-bar{height:24px;background:#1E293B;display:flex;align-items:center;padding:0 14px;border-bottom:1px solid #0F172A}
+.fo-phone-status{font-family:ui-monospace,monospace;font-size:.52rem;color:#475569}
+.fo-phone-screen{padding:10px}
+.fo-phone-wo-id{font-family:ui-monospace,monospace;font-size:.58rem;color:#60A5FA;margin-bottom:3px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.fo-phone-wo-title{font-size:.74rem;font-weight:700;color:#F1F5F9;line-height:1.3;margin-bottom:10px}
+.fo-phone-tabs{display:flex;gap:2px;margin-bottom:10px}
+.fo-phone-tab{flex:1;text-align:center;font-size:.52rem;font-weight:600;padding:5px 2px;border-radius:6px;color:#475569;background:rgba(255,255,255,.04);cursor:default}
+.fo-phone-tab.fo-tab-active{background:rgba(37,99,235,.2);color:#93C5FD}
+.fo-phone-step{background:rgba(255,255,255,.03);border:1px dashed #334155;border-radius:8px;padding:10px;margin-bottom:8px}
+.fo-phone-step-title{font-size:.68rem;font-weight:700;color:#F1F5F9;margin-bottom:3px}
+.fo-phone-step-desc{font-size:.6rem;color:#64748B;margin-bottom:8px;line-height:1.4}
+.fo-phone-upload{display:flex;align-items:center;justify-content:center;gap:5px;font-size:.62rem;color:#64748B;border:1px dashed #334155;border-radius:6px;padding:6px;margin-bottom:8px}
+.fo-phone-btn{width:100%;font-size:.66rem;font-weight:700;background:#2563EB;color:#fff;border:none;border-radius:8px;padding:8px;cursor:default}
+.fo-disc-title{font-size:.58rem;font-weight:700;color:#475569;margin:10px 0 5px;text-transform:uppercase;letter-spacing:.06em}
+.fo-disc-msg{display:flex;gap:5px;align-items:flex-start}
+.fo-disc-avatar{width:18px;height:18px;border-radius:50%;background:#2563EB;color:#fff;font-size:.55rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fo-disc-bubble{background:rgba(255,255,255,.05);border-radius:0 6px 6px 6px;padding:5px 7px;font-size:.6rem;color:#94A3B8;line-height:1.4;flex:1}
+.fo-phone-label{font-size:.72rem;color:var(--muted);font-weight:500}
+@media(max-width:860px){
+  .fo-preview-layout{flex-direction:column}
+  .fo-phone-wrap{flex-direction:row;align-items:flex-end;justify-content:center}
+  .fo-wo-header,.fo-wo-row{grid-template-columns:100px 1fr 80px}
+  .fo-wo-header span:nth-child(3),.fo-wo-row .fo-vendor,
+  .fo-wo-header span:nth-child(4),.fo-wo-row .fo-loc{display:none}
+}
+@media(max-width:480px){
+  .fo-phone-wrap{flex-direction:column;align-items:center}
+  .fo-phone{width:180px}
+}
+</style>
+
+<!-- DEEP FEATURE ROWS -->
+<section class="section" style="background:#fff" aria-labelledby="detail-heading">
+  <div class="container">
+    <div style="text-align:center;max-width:600px;margin:0 auto 72px">
+      <div class="chip">Deep Dive</div>
+      <h2 class="h2" id="detail-heading">Built for every stakeholder in your operation</h2>
+    </div>
+    <!-- Row 1 -->
+    <div class="detail-row">
+      <div class="detail-text">
+        <div class="label" style="margin-bottom:12px">For Admins &amp; Ops Managers</div>
+        <h2 class="h2" style="font-size:clamp(24px,2.5vw,32px)">Total command over every work order</h2>
+        <p class="body" style="margin-top:16px">The admin dashboard gives ops managers a structured, real-time view of the entire operation. Create work orders with full scope definition, manage clients, assign vendors, and track job status from a single pane of glass.</p>
+        <ul class="detail-list">
+          <li><span class="check">✓</span> Structured work order creation with job-type templates</li>
+          <li><span class="check">✓</span> Client directory with linked history and contacts</li>
+          <li><span class="check">✓</span> Real-time job status tracking across all vendors</li>
+          <li><span class="check">✓</span> Role-based user access for your internal team</li>
+          <li><span class="check">✓</span> Notification centre for job updates and alerts</li>
+          <li><span class="check">✓</span> Organisation-level settings, branding, and configuration</li>
+        </ul>
+      </div>
+      <div class="detail-visual"><div class="big-icon">🖥️</div></div>
+    </div>
+    <!-- Row 2 -->
+    <div class="detail-row">
+      <div class="detail-visual" style="order:1"><div class="big-icon">📱</div></div>
+      <div class="detail-text" style="order:2">
+        <div class="label" style="margin-bottom:12px">For Field Teams &amp; Contractors</div>
+        <h2 class="h2" style="font-size:clamp(24px,2.5vw,32px)">Execute from any phone — no app needed</h2>
+        <p class="body" style="margin-top:16px">Field agents receive a personalised magic link via SMS or WhatsApp. They open it in any mobile browser and follow a step-by-step guided wizard — capturing GPS location, photos, checklist responses, and client signatures on-site.</p>
+        <ul class="detail-list">
+          <li><span class="check">✓</span> Secure, one-tap magic link access — no account needed</li>
+          <li><span class="check">✓</span> Step-by-step guided execution wizard</li>
+          <li><span class="check">✓</span> GPS-stamped location capture at submission</li>
+          <li><span class="check">✓</span> Timestamped photo documentation</li>
+          <li><span class="check">✓</span> Checklist-driven job completion</li>
+          <li><span class="check">✓</span> On-site digital signature capture</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Row 3 -->
+    <div class="detail-row">
+      <div class="detail-text">
+        <div class="label" style="margin-bottom:12px">For Vendors &amp; Sub-Contractors</div>
+        <h2 class="h2" style="font-size:clamp(24px,2.5vw,32px)">A dedicated portal for your contractor network</h2>
+        <p class="body" style="margin-top:16px">Vendors get their own self-service portal to manage their relationship with your business — without burdening your admin team. Reduce back-and-forth and give contractors the visibility they need to perform.</p>
+        <ul class="detail-list">
+          <li><span class="check">✓</span> View all assigned jobs and work orders</li>
+          <li><span class="check">✓</span> Access commercial rates and billing details</li>
+          <li><span class="check">✓</span> Manage their own team members</li>
+          <li><span class="check">✓</span> Update and maintain their own profile</li>
+          <li><span class="check">✓</span> Transparent performance rating history</li>
+        </ul>
+      </div>
+      <div class="detail-visual"><div class="big-icon">🏗️</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries" class="industries section" aria-labelledby="industries-heading">
+  <div class="container">
+    <div class="industries-header">
+      <div class="chip">Industries</div>
+      <h2 class="h2" id="industries-heading">Built for any team that sends people into the field</h2>
+      <p class="body-lg" style="margin-top:16px">If your business dispatches technicians, contractors, or agents to client sites, FieldOps365 was built for you.</p>
+    </div>
+    <div class="industry-grid">
+      <div class="industry-card"><div class="industry-icon">🔥</div><div><h4>Fire Safety &amp; Protection</h4><p>Annual maintenance contracts, fire suppression installs, compliance inspections — all with certified digital proof.</p></div></div>
+      <div class="industry-card"><div class="industry-icon">❄️</div><div><h4>HVAC Services</h4><p>Track preventive maintenance, service calls, and equipment installs with structured job checklists and photo evidence.</p></div></div>
+      <div class="industry-card"><div class="industry-icon">⚡</div><div><h4>Electrical Contracting</h4><p>Manage site inspections, wiring jobs, and compliance certificates through a single structured platform.</p></div></div>
+      <div class="industry-card"><div class="industry-icon">🏢</div><div><h4>Facilities Management</h4><p>Coordinate multi-vendor, multi-site operations with complete job-level visibility and audit-ready documentation.</p></div></div>
+      <div class="industry-card"><div class="industry-icon">🔒</div><div><h4>Security System Installation</h4><p>Document every install, commissioning test, and handover with GPS timestamps and client acknowledgment.</p></div></div>
+      <div class="industry-card"><div class="industry-icon">🛠️</div><div><h4>AMC Providers</h4><p>Run annual maintenance contracts across hundreds of client sites with automated completion certificates and vendor performance tracking.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="Platform metrics">
+  <div class="container">
+    <h2 class="h2 text-center" style="color:#fff;margin-bottom:48px">Results that speak for themselves</h2>
+    <div class="stats-grid">
+      <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Paperless workflow from day one</div></div>
+      <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">App downloads required by field teams</div></div>
+      <div class="stat-item"><div class="stat-num">&lt;60s</div><div class="stat-label">To generate a completion certificate after approval</div></div>
+      <div class="stat-item"><div class="stat-num">∞</div><div class="stat-label">Clients, sites &amp; vendors — no hard limits</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="section" style="background:#fff" aria-labelledby="pricing-heading">
+  <div class="container">
+    <div class="pricing-header">
+      <div class="chip">Pricing</div>
+      <h2 class="h2" id="pricing-heading">Simple, transparent pricing — sized for your team</h2>
+      <p class="body-lg" style="margin-top:16px">We don't believe in one-size-fits-all tiers. Your proposal is based on your actual operations — team size, job volume, and what you need configured.</p>
+    </div>
+    <div class="pricing-card featured">
+      <div class="pricing-badge">Custom Proposal</div>
+      <div class="pricing-price">Talk to us <span style="font-size:15px;color:var(--muted)">→ no fluff, just numbers</span></div>
+      <p class="pricing-desc">We'll build a proposal based on your number of admin users, field agents, job volume per month, and any custom configuration required.</p>
+      <ul class="pricing-features">
+        <li><span class="check">✓</span> Unlimited work orders &amp; jobs</li>
+        <li><span class="check">✓</span> All features included — no paywalled tiers</li>
+        <li><span class="check">✓</span> Multi-tenant architecture for multiple clients</li>
+        <li><span class="check">✓</span> Onboarding &amp; configuration support included</li>
+        <li><span class="check">✓</span> Dedicated account manager</li>
+        <li><span class="check">✓</span> Ongoing updates and feature releases</li>
+      </ul>
+      <a href="mailto:contact@fieldops365.com" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">Get Your Custom Proposal →</a>
+      <p class="pricing-contact" style="margin-top:20px">
+        Prefer to call? <a href="tel:+919819529645">+91 98195 29645</a><br>
+        Email us at <a href="mailto:contact@fieldops365.com">contact@fieldops365.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq section" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="faq-header">
+      <div class="chip">FAQ</div>
+      <h2 class="h2" id="faq-heading">Common questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">Do my field agents need to download an app?<span class="faq-chevron">▾</span></button>
+        <div class="faq-a">No. Field agents receive a secure magic link via SMS or WhatsApp. They open it in any mobile browser and complete the full job workflow without downloading anything or creating an account. This removes a major barrier to adoption — especially for contract workers who won't install company software on personal phones.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">How does GPS and photo evidence capture work?<span class="faq-chevron">▾</span></button>
+        <div class="faq-a">When a field agent opens their job link on a mobile browser, the execution wizard prompts them to allow location access. GPS coordinates are automatically stamped at the time of submission. Photos are taken directly through the wizard interface and attached to the job record with a server-side timestamp — which cannot be altered. Admins can view all evidence in the review queue before approving completion.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">What is a completion certificate and how is it generated?<span class="faq-chevron">▾</span></button>
+        <div class="faq-a">A completion certificate is a professional PDF document that formally records a completed job — including job details, client information, on-site evidence, and the client's digital signature. Once an admin approves a job in the review queue, FieldOps365 generates the certificate automatically in under 60 seconds. No manual effort required.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">Can we manage multiple client organisations on one platform?<span class="faq-chevron">▾</span></button>
+        <div class="faq-a">Yes. FieldOps365 is built on a multi-tenant architecture. Each client organisation operates in a completely isolated environment with its own data, users, vendors, job types, and branding. There is no data bleed between tenants — and you manage everything from a single platform admin view.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">How does vendor management work?<span class="faq-chevron">▾</span></button>
+        <div class="faq-a">You maintain a vendor directory within the platform, assign vendors to work orders and individual jobs, and track their performance through a structured ratings system. Vendors also have access to their own self-service portal to view assigned jobs, commercial terms, team members, and their profile — reducing admin back-and-forth significantly.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">Is FieldOps365 suitable for AMC (Annual Maintenance Contract) businesses?<span class="faq-chevron">▾</span></button>
+        <div class="faq-a">Yes — AMC operations are a primary use case. The platform handles high job volumes across multiple sites and clients, with structured checklists, digital proof capture, and automated completion certificates that meet compliance requirements. Whether you're running 50 or 5,000 maintenance visits a year, FieldOps365 scales with you.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">How do I get started?<span class="faq-chevron">▾</span></button>
+        <div class="faq-a">Contact us at <a href="mailto:contact@fieldops365.com" style="color:var(--blue);font-weight:600">contact@fieldops365.com</a> or call <a href="tel:+919819529645" style="color:var(--blue);font-weight:600">+91 98195 29645</a>. We'll understand your operations, configure your tenant, onboard your team, and typically have you live within a week.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" aria-labelledby="cta-heading">
+  <div class="container">
+    <h2 class="h2" id="cta-heading">Ready to run a tighter field operation?</h2>
+    <p class="body-lg">Stop managing field ops over WhatsApp. Start running it on a platform built for the job.</p>
+    <div class="cta-actions">
+      <a href="https://live.fieldops365.com" class="btn btn-white btn-lg">Get Started Free →</a>
+      <a href="mailto:contact@fieldops365.com" class="btn btn-ghost btn-lg">Talk to Sales</a>
+    </div>
+    <p class="cta-contact">Questions? <a href="mailto:contact@fieldops365.com">contact@fieldops365.com</a> &nbsp;·&nbsp; <a href="tel:+919819529645">+91 98195 29645</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="margin-bottom:16px">
+          <img src="/images/fieldops-logo.png" alt="FieldOps365" width="110" height="33" style="filter:brightness(0) invert(1);opacity:.9">
+        </div>
+        <p style="color:rgba(255,255,255,.55)">End-to-end field service management for modern operations teams. Work orders, vendor coordination, GPS proof, digital certificates — one platform.</p>
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:6px">
+          <a href="mailto:contact@fieldops365.com" style="font-size:13px;color:#67E8F9;transition:color .15s">contact@fieldops365.com</a>
+          <a href="tel:+919819529645" style="font-size:13px;color:#86EFAC;transition:color .15s">+91 98195 29645</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="https://live.fieldops365.com">Go to App ↗</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Use Cases</h5>
+        <ul>
+          <li><a href="#industries">Fire Safety</a></li>
+          <li><a href="#industries">HVAC</a></li>
+          <li><a href="#industries">Facilities Management</a></li>
+          <li><a href="#industries">AMC Providers</a></li>
+          <li><a href="#industries">Electrical Contracting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get in Touch</h5>
+        <div class="footer-contact">
+          <div class="footer-contact-email">
+            <span style="font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:3px">Email</span>
+            <a href="mailto:contact@fieldops365.com">contact@fieldops365.com</a>
+          </div>
+          <div class="footer-contact-phone">
+            <span style="font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:3px">Phone</span>
+            <a href="tel:+919819529645">+91 98195 29645</a>
+          </div>
+          <div class="footer-contact-web">
+            <span style="font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:3px">Company</span>
+            <a href="https://swatilabs.in" target="_blank" rel="noopener">swatilabs.in ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FieldOps365. All rights reserved. A product of SwatiLabs.</p>
+      <a href="https://swatilabs.in" class="footer-swati" target="_blank" rel="noopener" aria-label="SwatiLabs — makers of FieldOps365">Swati<span class="sl-labs">Labs</span>.in</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(btn){
+  const m=document.getElementById('mobileMenu');
+  const o=m.classList.toggle('open');
+  btn.setAttribute('aria-expanded',o);
+}
+function toggleFAQ(btn){
+  const item=btn.closest('.faq-item');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+  btn.setAttribute('aria-expanded',!wasOpen);
+}
+document.querySelectorAll('.mobile-menu a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+});
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a[href^="#"]');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(l=>l.style.color='');
+      const a=document.querySelector('.nav-links a[href="#'+e.target.id+'"]');
+      if(a)a.style.color='var(--blue)';
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px'});
+sections.forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
