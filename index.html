@@ -132,11 +132,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-
 .solution{background:#fff}
 .solution-header{text-align:center;max-width:720px;margin:0 auto 48px}
 
-.sol-flow{display:flex;overflow-x:auto;scroll-snap-type:x proximity;padding:8px 4px 22px;-webkit-overflow-scrolling:touch}
-.sol-flow::-webkit-scrollbar{height:6px}
-.sol-flow::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-.sol-arrow{flex:0 0 22px;display:flex;align-items:flex-start;justify-content:center;padding-top:9px;color:var(--border);font-size:20px}
-.sol-step{scroll-snap-align:start;flex:0 0 262px;display:flex;flex-direction:column;padding:0 12px}
+.sol-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:36px 20px;padding:8px 4px 22px}
+.sol-step{display:flex;flex-direction:column}
 .sol-step-top{display:flex;align-items:center;gap:8px;margin-bottom:12px}
 .sol-num{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sol-icon{width:32px;height:32px;border-radius:9px;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
@@ -227,6 +224,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-
 .sol-banner-item small{font-size:.66rem;color:rgba(255,255,255,.65);line-height:1.4}
 
 @media(max-width:1024px){
+  .sol-flow{grid-template-columns:repeat(2,1fr)}
   .sol-widgets{grid-template-columns:repeat(3,1fr)}
   .sol-banner{grid-template-columns:repeat(3,1fr)}
 }
@@ -234,9 +232,9 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-
   .sol-widgets{grid-template-columns:repeat(2,1fr)}
   .sol-banner{grid-template-columns:1fr 1fr}
   .sol-realtime{padding:22px}
-  .sol-step{flex:0 0 236px}
 }
 @media(max-width:480px){
+  .sol-flow{grid-template-columns:1fr}
   .sol-widgets{grid-template-columns:1fr}
   .sol-banner{grid-template-columns:1fr}
   .sol-realtime-head{flex-direction:column}
@@ -575,8 +573,6 @@ footer{background:var(--slate);color:rgba(255,255,255,.7);padding:60px 0 32px}
         <div class="sol-tags"><span>Task checklist</span><span>Attachments</span><span>Multi-job grouping</span></div>
       </div>
 
-      <div class="sol-arrow">›</div>
-
       <div class="sol-step" style="--accent:#0D9488;--accent-bg:#F0FDFA">
         <div class="sol-step-top"><div class="sol-num">2</div><div class="sol-icon">👥</div></div>
         <h3 class="sol-step-title">Bring in the Right People</h3>
@@ -593,8 +589,6 @@ footer{background:var(--slate);color:rgba(255,255,255,.7);padding:60px 0 32px}
         <div class="sol-tags"><span>Vendor teams & solo technicians</span><span>Secure magic-link access</span><span>Zero app install</span></div>
       </div>
 
-      <div class="sol-arrow">›</div>
-
       <div class="sol-step" style="--accent:#16A34A;--accent-bg:#F0FDF4">
         <div class="sol-step-top"><div class="sol-num">3</div><div class="sol-icon">💬</div></div>
         <h3 class="sol-step-title">Talk It Through — On the Record</h3>
@@ -610,8 +604,6 @@ footer{background:var(--slate);color:rgba(255,255,255,.7);padding:60px 0 32px}
         </ul>
         <div class="sol-tags"><span>WhatsApp-style job chat</span><span>Automatic activity log</span></div>
       </div>
-
-      <div class="sol-arrow">›</div>
 
       <div class="sol-step" style="--accent:#D97706;--accent-bg:#FFFBEB">
         <div class="sol-step-top"><div class="sol-num">4</div><div class="sol-icon">📍</div></div>
@@ -636,8 +628,6 @@ footer{background:var(--slate);color:rgba(255,255,255,.7);padding:60px 0 32px}
         <div class="sol-tags"><span>GPS check-in/out</span><span>Photo evidence</span><span>Equipment & material log</span><span>Multi-day jobs</span><span>Training attendance capture</span></div>
       </div>
 
-      <div class="sol-arrow">›</div>
-
       <div class="sol-step" style="--accent:#7C3AED;--accent-bg:#F5F3FF">
         <div class="sol-step-top"><div class="sol-num">5</div><div class="sol-icon">✍️</div></div>
         <h3 class="sol-step-title">Client Sign-Off, On the Spot</h3>
@@ -653,8 +643,6 @@ footer{background:var(--slate);color:rgba(255,255,255,.7);padding:60px 0 32px}
         </ul>
         <div class="sol-tags"><span>Digital signature capture</span><span>Timestamped & tamper-proof</span></div>
       </div>
-
-      <div class="sol-arrow">›</div>
 
       <div class="sol-step" style="--accent:#4338CA;--accent-bg:#EEF2FF">
         <div class="sol-step-top"><div class="sol-num">6</div><div class="sol-icon">🛡️</div></div>
@@ -673,8 +661,6 @@ footer{background:var(--slate);color:rgba(255,255,255,.7);padding:60px 0 32px}
         <div class="sol-tags"><span>Review queue</span><span>Send-back for rework</span><span>Quality control</span></div>
         <div class="sol-rework">↩ Not up to standard? Goes back to <strong>Step 4</strong> for rework.</div>
       </div>
-
-      <div class="sol-arrow">›</div>
 
       <div class="sol-step" style="--accent:#0284C7;--accent-bg:#F0F9FF">
         <div class="sol-step-top"><div class="sol-num">7</div><div class="sol-icon">📈</div></div>
